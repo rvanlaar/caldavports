@@ -1,12 +1,11 @@
 This repository holds the code for FreeBSD packages of the Darwin
 CalendarServer.
 
-Kerberos and SQLparse have been committed to FreeBSD.
-See http://www.freebsd.org/cgi/query-pr.cgi?pr=156791 and
-http://www.freebsd.org/cgi/query-pr.cgi?pr=156791  for the status of these 
-ports.
+py-kerberos and py-sqlparse have been committed to FreeBSD but have not been made available in the ports tree. See the links for the current status.
+
+py-kerberos: http://www.freebsd.org/cgi/query-pr.cgi?pr=156791
+py-sqlparse: http://www.freebsd.org/cgi/query-pr.cgi?pr=156828
 
 There are no tarballs for pycalendar and the calendarserver yet.
 These ports will be committed to FreeBSD when there are 
 tarballs. You can create your own tarballs.
-
