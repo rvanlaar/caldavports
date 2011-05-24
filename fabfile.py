@@ -7,7 +7,7 @@ projects = {'pycalendar': 'http://svn.mulberrymail.com/repos/PyCalendar/'
             'kerberos': 'http://svn.calendarserver.org/repository/'
                           'calendarserver/PyKerberos/trunk@7357',
             'calendarserver':  'http://svn.macosforge.org/repository/'
-                               'calendarserver/CalendarServer/trunk@7257'}
+                               'calendarserver/CalendarServer/trunk@7517'}
 
 
 def get_svn_export(project, url):
