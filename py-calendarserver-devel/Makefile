@@ -9,7 +9,7 @@ PORTNAME=		calendarserver
 PORTVERSION=		3.0.r7517
 DISTNAME=		calendarserver-trunk\(r7517\)
 CATEGORIES=		net python
-MASTER_SITES=
+MASTER_SITES=   https://github.com/rvanlaar/caldavports/raw/master/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		roland@micite.net
