@@ -45,7 +45,7 @@ MAN8=			caladmin.8 \
 
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|version()|("trunk", "(r7257)")|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|version()|("trunk", "(r7517)")|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|distutils.core|setuptools|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|bin/bash|usr/bin/env bash|' ${WRKSRC}/bin/caldavd
 	@${REINPLACE_CMD} -e 's|errno.ENODATA, 93|93,|' ${WRKSRC}/twext/web2/dav/xattrprops.py
