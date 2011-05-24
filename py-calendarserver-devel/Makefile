@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		calendarserver
-PORTVERSION=		3.0.r7257
-DISTNAME=		calendarserver-trunk\(r7257\)
+PORTVERSION=		3.0.r7517
+DISTNAME=		calendarserver-trunk\(r7517\)
 CATEGORIES=		net python
 MASTER_SITES=
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ COMMENT=		Calendar and Contacts Server from Apple.
 USE_PYTHON=		2.7+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Calendar_and_Contacts_Server
-PYDISTUTILS_PKGVERSION=	trunk._r7257_
+PYDISTUTILS_PKGVERSION=	trunk._r7517_
 PYEASYINSTALL_ARCHDEP=	yes
 
 USE_PGSQL=		yes
