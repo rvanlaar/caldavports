@@ -18,7 +18,6 @@ USE_PYTHON=			yes
 USE_PYDISTUTILS=	easy_install
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|version()|("trunk", "(r7257)")|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|distutils.core|setuptools|g' ${WRKSRC}/setup.py
 
 
