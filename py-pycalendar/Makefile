@@ -8,17 +8,16 @@
 PORTNAME=			pycalendar
 PORTVERSION=		2.0
 CATEGORIES=			devel python
-MASTER_SITES=
+MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=			roland@micite.net
-COMMENT=			An icalendar and vcard support for python
+COMMENT=			An icalendar and vcard module for python
 
 USE_PYTHON=			yes
 USE_PYDISTUTILS=	easy_install
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|distutils.core|setuptools|g' ${WRKSRC}/setup.py
-
 
 .include <bsd.port.mk>

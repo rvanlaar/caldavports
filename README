@@ -5,7 +5,8 @@ py-kerberos and py-sqlparse have been committed to FreeBSD but have not been mad
 
 py-kerberos: http://www.freebsd.org/cgi/query-pr.cgi?pr=156791
 py-sqlparse: http://www.freebsd.org/cgi/query-pr.cgi?pr=156828
+py-pycalendar: 
 
-There are no tarballs for pycalendar and the calendarserver yet.
-These ports will be committed to FreeBSD when there are 
-tarballs. You can create your own tarballs.
+There is no official tarball for the calendarserver yet.
+Work is in progress for putting the tarball in this repository
+and after that submitting it to FreeBSD.
