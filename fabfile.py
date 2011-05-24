@@ -1,4 +1,5 @@
 import os
+import sys
 
 from fabric.api import local, lcd
 
@@ -35,13 +36,27 @@ def build_tar(project):
         local('rm -f .pydevproject')
 
     #Tar
-    project_tar = project_version + '.tar.gz'
+    pt = {'project_tar': project_version + '.tar.gz',
+          'project_version': project_version}
     local('tar -C /tmp -czvf "{project_tar}" '
-          '"{project_version}"'.format(project_version=project_version,
-                                       project_tar=project_tar))
-    local('sha256sum "{project_tar}" |awk \'{{printf "SHA256 (%s) = %s\\n", $2, $1 }}\' > distinfo'.format(project_tar=project_tar))
-    local('ls -l "{project_tar}" |awk \'{{printf "SIZE (%s) = %s\\n", $8, $5 }}\' >> distinfo'.format(project_tar=project_tar))
+          '"{project_version}"'.format(**pt))
+                                       
 
+    if sys.platform == 'linux2':
+        local('sha256sum "{project_tar}" |'
+              'awk \'{{printf "SHA256 (%s) = %s\\n", $2, $1 }}\' > distinfo'
+              ''.format(**pt))
+        local('ls -l "{project_tar}" |'
+              'awk \'{{printf "SIZE (%s) = %s\\n", $8, $5 }}\' >> distinfo'
+              ''.format(**pt))
+    elif sys.platform == 'freebsd8':
+        local('sha256 "{project_tar}" |'
+              'awk \'{{printf "SHA256 (%s) = %s\\n", $2, $4\' > distinfo'
+              ''.format(**pt))
+        local('ls -l "{project_tar}" |'
+              'awk \'{{printf "SIZE (%s) = %s\\n", $9, $5 }}\' >> distinfo'
+              ''.format(**pt))
+        
 
 def build(project):
     project_url = projects[project]
