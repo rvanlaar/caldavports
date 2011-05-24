@@ -4,8 +4,6 @@ from fabric.api import local, lcd
 
 projects = {'pycalendar': 'http://svn.mulberrymail.com/repos/PyCalendar/'
                           'branches/server-stable@161',
-            'kerberos': 'http://svn.calendarserver.org/repository/'
-                          'calendarserver/PyKerberos/trunk@7357',
             'calendarserver':  'http://svn.macosforge.org/repository/'
                                'calendarserver/CalendarServer/trunk@7517'}
 
