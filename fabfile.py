@@ -37,8 +37,12 @@ def build_tar(project):
         local('rm -f .pydevproject')
 
     #Tar
-    local('tar -C /tmp -czvf "{project_version}.tar.gz" '
-          '"{project_version}"'.format(project_version=project_version))
+    project_tar = project_version + '.tar.gz'
+    local('tar -C /tmp -czvf "{project_tar}" '
+          '"{project_version}"'.format(project_version=project_version,
+                                       project_tar=project_tar))
+    local('sha256sum "{project_tar}" |awk \'{{printf "SHA256 (%s) = %s\\n", $2, $1 }}\' > distinfo'.format(project_tar=project_tar))
+    local('ls -l "{project_tar}" |awk \'{{printf "SIZE (%s) = %s\\n", $8, $5 }}\' >> distinfo'.format(project_tar=project_tar))
 
 
 def build(project):
