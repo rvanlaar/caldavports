@@ -9,11 +9,13 @@ PORTNAME=		calendarserver
 PORTVERSION=		3.0.r7517
 DISTNAME=		calendarserver-trunk\(r7517\)
 CATEGORIES=		net python
-MASTER_SITES=   https://github.com/rvanlaar/caldavports/raw/master/
+MASTER_SITES=		https://github.com/rvanlaar/caldavports/raw/master/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		roland@micite.net
 COMMENT=		Calendar and Contacts Server from Apple.
+
+# USE_RC_SUBR
 
 USE_PYTHON=		2.7+
 USE_PYDISTUTILS=	easy_install
@@ -22,8 +24,27 @@ PYDISTUTILS_PKGVERSION=	trunk._r7517_
 PYEASYINSTALL_ARCHDEP=	yes
 
 USE_PGSQL=		yes
+WANT_PGSQL_VER=		90
+USE_OPENLDAP=		yes
 
-RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash \
+			memcached>=1.4.5:${PORTSDIR}/databases/memcached \
+			postgresql90-server>=9.0.4:${PORTSDIR}/databases/postgresql90-server \
+			${PYTHON_PKGNAMEPREFIX}twistedWeb>=10.1.0:${PORTSDIR}/devel/py-twistedWeb \
+			${PYTHON_PKGNAMEPREFIX}twistedMail>=10.1.0:${PORTSDIR}/devel/py-twistedMail \
+			${PYTHON_PKGNAMEPREFIX}twistedWords>=10.1.0:${PORTSDIR}/devel/py-twistedWords \
+			${PYTHON_PKGNAMEPREFIX}xattr>=0.5:${PORTSDIR}/devel/py-xattr \
+			${PYTHON_PKGNAMEPREFIX}xml>=0.8.4:${PORTSDIR}/textproc/py-xml \
+			${PYTHON_PKGNAMEPREFIX}openssl>=0.11:${PORTSDIR}/security/py-openssl \
+			${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil \
+			${PYTHON_PKGNAMEPREFIX}PyGreSQL>=4.0,1:${PORTSDIR}/databases/py-PyGreSQL \
+			${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.13:${PORTSDIR}/net/py-ldap2 \
+			${PYTHON_PKGNAMEPREFIX}vobject>=0.8.1b:${PORTSDIR}/deskutils/py-vobject \
+			${PYTHON_PKGNAMEPREFIX}sqlite3:${PORTSDIR}/devel/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}sqlparse:${PORTSDIR}/databases/py-sqlparse \
+			${PYTHON_PKGNAMEPREFIX}pycalendar:${PORTSDIR}/devel/py-pycalendar \
+			${PYTHON_PKGNAMEPREFIX}kerberos:${PORTSDIR}/security/py-kerberos
+
 DBDIR=			/var/db/caldavd
 LOGDIR=			/var/log/caldavd
 SHAREDIR=		${PREFIX}/share/caldavd
