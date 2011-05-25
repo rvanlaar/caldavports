@@ -24,15 +24,13 @@ PYDISTUTILS_PKGVERSION=	trunk._r7517_
 PYEASYINSTALL_ARCHDEP=	yes
 
 USE_PGSQL=		yes
+USE_TWISTED_RUN=	mail web words
 WANT_PGSQL_VER=		90
 USE_OPENLDAP=		yes
 
 RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash \
 			memcached>=1.4.5:${PORTSDIR}/databases/memcached \
 			postgresql90-server>=9.0.4:${PORTSDIR}/databases/postgresql90-server \
-			${PYTHON_PKGNAMEPREFIX}twistedWeb>=10.1.0:${PORTSDIR}/devel/py-twistedWeb \
-			${PYTHON_PKGNAMEPREFIX}twistedMail>=10.1.0:${PORTSDIR}/devel/py-twistedMail \
-			${PYTHON_PKGNAMEPREFIX}twistedWords>=10.1.0:${PORTSDIR}/devel/py-twistedWords \
 			${PYTHON_PKGNAMEPREFIX}xattr>=0.5:${PORTSDIR}/devel/py-xattr \
 			${PYTHON_PKGNAMEPREFIX}xml>=0.8.4:${PORTSDIR}/textproc/py-xml \
 			${PYTHON_PKGNAMEPREFIX}openssl>=0.11:${PORTSDIR}/security/py-openssl \
