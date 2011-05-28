@@ -38,7 +38,7 @@ RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash \
 			${PYTHON_PKGNAMEPREFIX}PyGreSQL>=4.0,1:${PORTSDIR}/databases/py-PyGreSQL \
 			${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.13:${PORTSDIR}/net/py-ldap2 \
 			${PYTHON_PKGNAMEPREFIX}vobject>=0.8.1b:${PORTSDIR}/deskutils/py-vobject \
-			${PYTHON_PKGNAMEPREFIX}sqlite3:${PORTSDIR}/devel/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}sqlite3:${PORTSDIR}/databases/py-sqlite3 \
 			${PYTHON_PKGNAMEPREFIX}sqlparse:${PORTSDIR}/databases/py-sqlparse \
 			${PYTHON_PKGNAMEPREFIX}pycalendar:${PORTSDIR}/devel/py-pycalendar \
 			${PYTHON_PKGNAMEPREFIX}kerberos:${PORTSDIR}/security/py-kerberos
