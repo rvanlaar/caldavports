@@ -30,7 +30,7 @@ USE_OPENLDAP=		yes
 
 RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash \
 			memcached>=1.4.5:${PORTSDIR}/databases/memcached \
-			postgresql90-server>=9.0.4:${PORTSDIR}/databases/postgresql90-server \
+			postgresql-server>=9.0.4:${PORTSDIR}/databases/postgresql90-server \
 			${PYTHON_PKGNAMEPREFIX}xattr>=0.5:${PORTSDIR}/devel/py-xattr \
 			${PYTHON_PKGNAMEPREFIX}xml>=0.8.4:${PORTSDIR}/textproc/py-xml \
 			${PYTHON_PKGNAMEPREFIX}openssl>=0.11:${PORTSDIR}/security/py-openssl \
@@ -38,10 +38,10 @@ RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash \
 			${PYTHON_PKGNAMEPREFIX}PyGreSQL>=4.0,1:${PORTSDIR}/databases/py-PyGreSQL \
 			${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.13:${PORTSDIR}/net/py-ldap2 \
 			${PYTHON_PKGNAMEPREFIX}vobject>=0.8.1b:${PORTSDIR}/deskutils/py-vobject \
-			${PYTHON_PKGNAMEPREFIX}sqlite3:${PORTSDIR}/databases/py-sqlite3 \
-			${PYTHON_PKGNAMEPREFIX}sqlparse:${PORTSDIR}/databases/py-sqlparse \
-			${PYTHON_PKGNAMEPREFIX}pycalendar:${PORTSDIR}/devel/py-pycalendar \
-			${PYTHON_PKGNAMEPREFIX}kerberos:${PORTSDIR}/security/py-kerberos
+                        ${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+			${PYTHON_PKGNAMEPREFIX}sqlparse>=0:${PORTSDIR}/databases/py-sqlparse \
+			${PYTHON_PKGNAMEPREFIX}pycalendar>=0:${PORTSDIR}/devel/py-pycalendar \
+			${PYTHON_PKGNAMEPREFIX}kerberos>=0:${PORTSDIR}/security/py-kerberos
 
 DBDIR=			/var/db/caldavd
 LOGDIR=			/var/log/caldavd
