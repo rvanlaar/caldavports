@@ -8,6 +8,6 @@ py-kerberos has been submitted to FreeBSD but has not been made available in the
 
 py-kerberos: http://www.freebsd.org/cgi/query-pr.cgi?pr=156791
 
-There is no official tarball for the calendarserver yet.
+There is no official tarball for the calendarserver (yet).
 There is a tarball in this repository, however the py-calendarserver-devel
 port isn't ready for release yet. For example, there is no rc file yet.
