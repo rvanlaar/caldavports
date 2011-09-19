@@ -43,7 +43,7 @@ def build_tar(project):
     local('tar -C /tmp -czvf "{project_tar}" '
           '"{project_version}"'.format(**pt))
 
-    if sys.platform == 'linux2':
+    if sys.platform in ('linux2', 'linux3'):
         local('sha256sum "{project_tar}" |'
               'awk \'{{printf "SHA256 (%s) = %s\\n", $2, $1 }}\' > distinfo'
               ''.format(**pt))
